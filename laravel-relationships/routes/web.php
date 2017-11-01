@@ -4,6 +4,7 @@
  * Routes -  One To One
  */
 $this->get('one-to-one', 'OneToOneController@OneToOne');
+$this->get('one-to-one-inverse', 'OneToOneController@OneToOneInverse');
 
 Route::get('/', function () {
     return view('welcome');
