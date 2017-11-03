@@ -19,8 +19,9 @@ class OneToOneController extends Controller{
 
 	//Usando pesquisa da forma reversa - pela suas coordenadas, encontra o pais
     public function OneToOneInverse(){
-    	$longitude = 123;
-    	$longitude = 321;
+    	$latitude = 798578;
+    	$longitude = 321687;
+    	
 
     	$location = Location::where('latitude', $latitude)->where('longitude', $longitude)->get()->first();
     	//echo $location->id;
@@ -30,6 +31,6 @@ class OneToOneController extends Controller{
     		Usando em forma de metodo
     		$country = $location->country()->get()->first();
     	 */
-    	echo $coutry->name;
+    	echo $country->name;
     }
 }
