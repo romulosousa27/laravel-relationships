@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 16-Nov-2017 às 23:00
+-- Generation Time: 17-Nov-2017 às 00:18
 -- Versão do servidor: 5.7.19
 -- PHP Version: 7.1.9
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `countries` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `countries_name_unique` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `countries`
@@ -44,7 +44,9 @@ CREATE TABLE IF NOT EXISTS `countries` (
 
 INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Brasil', NULL, NULL),
-(2, 'Argentina', NULL, NULL);
+(2, 'Argentina', NULL, NULL),
+(3, 'Alemanha', '2017-11-17 01:09:08', '2017-11-17 01:09:08'),
+(4, 'Inglaterra', '2017-11-17 01:18:43', '2017-11-17 01:18:43');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `locations_country_id_foreign` (`country_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Extraindo dados da tabela `locations`
@@ -70,7 +72,9 @@ CREATE TABLE IF NOT EXISTS `locations` (
 
 INSERT INTO `locations` (`id`, `country_id`, `latitude`, `longitude`, `created_at`, `updated_at`) VALUES
 (1, 1, 64987, 98798, NULL, NULL),
-(2, 2, 798578, 321687, NULL, NULL);
+(2, 2, 798578, 321687, NULL, NULL),
+(3, 3, 890, 908, '2017-11-17 01:09:08', '2017-11-17 01:09:08'),
+(4, 4, 567, 765, '2017-11-17 01:18:43', '2017-11-17 01:18:43');
 
 -- --------------------------------------------------------
 
