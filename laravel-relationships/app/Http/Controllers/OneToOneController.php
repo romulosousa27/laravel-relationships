@@ -7,6 +7,7 @@ use App\Models\Location;
 
 
 class OneToOneController extends Controller{
+	
 	//De acordo com pais, ele mostra duas coordenadas    
     public function OneToOne(){
         $pais = Country::find(1);
@@ -21,16 +22,35 @@ class OneToOneController extends Controller{
     public function OneToOneInverse(){
     	$latitude = 798578;
     	$longitude = 321687;
-    	
-
-    	$location = Location::where('latitude', $latitude)->where('longitude', $longitude)->get()->first();
+		
+		$location = Location::where('latitude', $latitude)->where('longitude', $longitude)->get()->first();
     	//echo $location->id;
-    	
-    	$country = $location->country;
+		
+		$country = $location->country;
     	/*  
     		Usando em forma de metodo
     		$country = $location->country()->get()->first();
     	 */
     	echo $country->name;
-    }
+	}
+	
+	public function OneToOneInsert(){
+		$dataform = [	
+						'name' 		=> 'Alemanha', 
+						'latitude' 	=> 890,
+						'longitude'	=> 908	
+					];
+		
+		$country = Country::create($dataform);
+
+		/*
+			$location = new Location;
+			$location->latitude = $dataform['latitude'];
+			$location->longitude = $dataform['longitude'];
+			$location->country_id = $country->id;
+			$savelocation = $location->save();
+		*/	
+		
+		$location = $country->location()->create($dataform);
+	}
 }
