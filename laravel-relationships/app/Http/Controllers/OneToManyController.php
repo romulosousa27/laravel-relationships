@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\State;
 
 class OneToManyController extends Controller{
+    
     public function OneToMany(){
         //Recuperando um pais pelo nome
         $keySearch = 'a';
@@ -31,6 +32,15 @@ class OneToManyController extends Controller{
             }
             echo "<hr>";
         }
+    }
+    
+    public function ManyToOne(){
+        $stateName = 'São Paulo';
+        $state = State::where('name', $stateName)->get()->first();
+        echo "<b>{$state->name}</b>";
+        
+        $country = $state->country;
+        echo "<br>Pais: {$country->name}";
     }
     
 
