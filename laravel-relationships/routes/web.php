@@ -15,6 +15,7 @@ $this->get('one-to-one-insert', 'OneToOneController@OneToOneInsert');
     Relacionamento 1 para muitos - One To Many
 */
 $this->get('one-to-many', 'OneToManyController@OneToMany');
+$this->get('many-to-one', 'OneToManyController@ManyToOne');
 
 
 /* Rota padrão do Laravel
