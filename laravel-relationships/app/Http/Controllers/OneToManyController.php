@@ -11,7 +11,7 @@ class OneToManyController extends Controller{
     public function OneToMany(){
         //Recuperando um pais pelo nome
         $keySearch = 'a';
-        $countries = Country::where('name', 'LIKE', "%{$keySearch}%")->get();
+        $countries = Country::where('name', 'LIKE', "%{$keySearch}%")->with('states')->get();
             
         /*
          * Recuperando o $state em forma de metodo ou atributo
@@ -41,6 +41,31 @@ class OneToManyController extends Controller{
         
         $country = $state->country;
         echo "<br>Pais: {$country->name}";
+    }
+
+    public function OneToManyTwo(){
+        //Recuperando um pais pelo nome
+        $keySearch = 'a';
+        $countries = Country::where('name', 'LIKE', "%{$keySearch}%")->with('states')->get();
+
+        foreach ($countries as $country){
+            //Exibe o Nome do Pais
+            echo "<b>{$country->name}</b>";
+            
+            //Recupera os Estados do Pais
+            $states = $country->states;
+            
+            //Exibe os estados do Pais
+            foreach ($states as $state){
+                echo "<br>{$state->initials} - {$state->name}: ";
+
+                //Exibe as cidades do estado
+                foreach($state->cities as $city){
+                    echo " {$city->name},  ";
+                }
+            }
+            echo "<hr>";
+        }
     }
     
 
