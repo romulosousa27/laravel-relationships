@@ -3,3 +3,7 @@
 Route::get('/', function(){
     return "Laravel Relationship";
 });
+
+// Relacionamento ONE TO ONE - Um Para Um
+$this->get('one-to-one', 'OneToOneController@OneToOne');
+$this->get('one-to-one-inverso', 'OneToOneController@OneToOneInverso');
