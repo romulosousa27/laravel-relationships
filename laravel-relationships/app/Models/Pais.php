@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pais extends Model
 {
+    protected $fillable = ['name'];
+
     public function local(){
         return $this->hasOne(Localizacao::class);
     }
