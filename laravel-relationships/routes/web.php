@@ -7,3 +7,4 @@ Route::get('/', function(){
 // Relacionamento ONE TO ONE - Um Para Um
 $this->get('one-to-one', 'OneToOneController@OneToOne');
 $this->get('one-to-one-inverso', 'OneToOneController@OneToOneInverso');
+$this->get('one-to-one-inserir', 'OneToOneController@OneToOneInserir');
