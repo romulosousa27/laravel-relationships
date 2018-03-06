@@ -37,7 +37,7 @@ class OneToOneController extends Controller
         $dataForm = [
             'name'      => 'Inglaterra',
             'latitude'  =>  '897321',
-            'longitude' =>  '123789'
+            'longitude' =>  '258465'
         ];
 
         $pais = Pais::create($dataForm);
