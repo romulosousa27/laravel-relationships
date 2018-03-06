@@ -8,3 +8,6 @@ Route::get('/', function(){
 $this->get('one-to-one', 'OneToOneController@OneToOne');
 $this->get('one-to-one-inverso', 'OneToOneController@OneToOneInverso');
 $this->get('one-to-one-inserir', 'OneToOneController@OneToOneInserir');
+
+//Relacionamento ONE TO MANY - Um Para Muitos
+$this->get('one-to-many', 'OneToManyController@OneToMany');
