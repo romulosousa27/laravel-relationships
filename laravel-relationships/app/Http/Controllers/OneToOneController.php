@@ -31,4 +31,27 @@ class OneToOneController extends Controller
         $pais =  $local->pais()->get()->first();
         echo $pais->name;
     }
+
+    //Inserindo dados
+    public function OneToOneInserir(){
+        $dataForm = [
+            'name'      => 'Inglaterra',
+            'latitude'  =>  '897321',
+            'longitude' =>  '123789'
+        ];
+
+        $pais = Pais::create($dataForm);
+
+        /* Inserindo um novo dado no BD
+        $local = new Localizacao;
+        $local->latitude = $dataForm['latitude'];
+        $local->longitude = $dataForm['longitude'];
+        $local->pais_id= $pais->id;
+        $SaveLocal = $local->save();
+        */
+
+        //Outra maneira de inserir.
+        $local = $pais->local()->create($dataForm);
+
+    }
 }
