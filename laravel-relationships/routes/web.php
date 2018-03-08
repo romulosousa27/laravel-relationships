@@ -11,7 +11,11 @@ $this->get('one-to-one-inserir', 'OneToOneController@OneToOneInserir');
 
 //Relacionamento ONE TO MANY - Um Para Muitos (Pais/Estado)
 $this->get('one-to-many', 'OneToManyController@OneToMany');
+
 //Relacionamento MANY TO ONE - Muitos para Um (Estado/Pais)
 $this->get('many-to-one', 'OneToManyController@ManyToOne');
+
 //Relacionamento MANY TO ONE - Muitos para Um (Cidades)
 $this->get('one-to-many-cidade', 'OneToManyController@OneToManyCidade');
+
+$this->get('one-to-many-inserir', 'OneToManyController@OneToManyInserir');
