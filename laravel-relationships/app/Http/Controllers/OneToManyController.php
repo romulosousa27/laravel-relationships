@@ -11,7 +11,7 @@ class OneToManyController extends Controller
     public function OneToMany(){
         //$pais = Pais::where('name', 'Brasil')->get()->first();
         $pesquisa = 'a';
-        $paises = Pais::where('name', 'LIKE', "%{$pesquisa}%")->get();
+        $paises = Pais::where('name', 'LIKE', "%{$pesquisa}%")->with('estados')->get();
 
         foreach ($paises as $p){
             //exibindo o nome do pais.
@@ -33,4 +33,27 @@ class OneToManyController extends Controller
 
         echo "<b>{$estado->name}</b>: {$pais->name}";
     }
+
+    public function OneToManyCidade(){
+        //$pais = Pais::where('name', 'Brasil')->get()->first();
+        $pesquisa = 'a';
+        $paises = Pais::where('name', 'LIKE', "%{$pesquisa}%")->with('estados')->get();
+
+        foreach ($paises as $p){
+            //exibindo o nome do pais.
+            echo "<b> {$p->name} </b>";
+
+            //exibindo todos os estado do pais.
+            $estados = $p->estados()->get();
+            foreach ($estados as $e){
+                echo "<br>{$e->name} ({$e->sigla}):";
+                
+                //recuperando a cidades do estado.
+                foreach($e->cidades as $c){
+                    echo $c->name;
+                }
+            }
+            echo "<hr>";
+        }
+    }    
 }
