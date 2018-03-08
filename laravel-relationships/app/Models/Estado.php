@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Estado extends Model
 {
+    protected $fillable = ['name', 'sigla'] ;
+
     public function Pais(){
         return $this->belongsTo(Pais::class);
     }
