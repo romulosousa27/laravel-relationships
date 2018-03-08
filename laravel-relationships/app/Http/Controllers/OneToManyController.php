@@ -46,14 +46,26 @@ class OneToManyController extends Controller
             //exibindo todos os estado do pais.
             $estados = $p->estados()->get();
             foreach ($estados as $e){
-                echo "<br>{$e->name} ({$e->sigla}):";
+                echo "<br>{$e->name} ({$e->sigla}): ";
                 
                 //recuperando a cidades do estado.
                 foreach($e->cidades as $c){
-                    echo $c->name;
+                    echo "<b> {$c->name} </b>";
                 }
             }
             echo "<hr>";
         }
-    }    
+    } 
+    
+    public function OneToManyInserir(){
+        
+        $pais = Pais::find(1);
+
+        $data = [
+            'name' => 'Santa Catarina',
+            'sigla' =>  'SC'
+        ];
+
+        $pais->estados()->create($data);
+    }
 }
