@@ -11,3 +11,5 @@ $this->get('one-to-one-inserir', 'OneToOneController@OneToOneInserir');
 
 //Relacionamento ONE TO MANY - Um Para Muitos
 $this->get('one-to-many', 'OneToManyController@OneToMany');
+//Relacionamento MANY TO ONE - Muitos para Um
+$this->get('many-to-one', 'OneToManyController@ManyToOne');
