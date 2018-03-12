@@ -19,3 +19,6 @@ $this->get('many-to-one', 'OneToManyController@ManyToOne');
 $this->get('one-to-many-cidade', 'OneToManyController@OneToManyCidade');
 
 $this->get('one-to-many-inserir', 'OneToManyController@OneToManyInserir');
+
+// Relacionamento Has Many Through - Tem Muitos Através
+$this->get('has-many-through' ,'OneToManyController@HasManyThrought');
