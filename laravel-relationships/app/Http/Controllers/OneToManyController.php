@@ -68,4 +68,16 @@ class OneToManyController extends Controller
 
         $pais->estados()->create($data);
     }
+
+    public function HasManyThrought(){
+        
+        $pais = Pais::find(1);
+        echo "<b> {$pais->name}: </b>";
+
+        $cidades = $pais->cidades()->get();
+
+        foreach($cidades as $c){
+            echo "( {$c->name} )";
+        }
+    }
 }
