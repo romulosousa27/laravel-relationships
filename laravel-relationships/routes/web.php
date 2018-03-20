@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function(){
-    return "Laravel Relationship";
+    return view('welcome');
 });
 
 // Relacionamento ONE TO ONE - Um Para Um
@@ -22,3 +22,6 @@ $this->get('one-to-many-inserir', 'OneToManyController@OneToManyInserir');
 
 // Relacionamento Has Many Through - Tem Muitos Através
 $this->get('has-many-through' ,'OneToManyController@HasManyThrought');
+
+//Relacionamento MANY TO MANY -  Muitos para Muitos.
+$this->get('many-to-many', 'ManyToManyController@ManyToMany');
