@@ -24,7 +24,29 @@ class ManyToManyController extends Controller
 
         $cidades = $empresa->cidades;
         foreach ($cidades as $c){
-            echo "{$c->name}";
+            echo " {$c->name} ";
         }
+    }
+
+    public function ManyToManyInserir(){
+        $dataForm = [2,3,4];
+
+        $empresa = Empresa::find(1);
+        echo "<b>{$empresa->name}</b>: ";
+
+        /*
+            attach() - sempre incrementa dados, repetidos ou não.
+            sync() - sincroniza os dados, adcionando ou removendo.
+            detach() - exclui dados, passando paramento vazios deleta todos, especificando deleta apenas esse.
+        */
+        //$empresa->cidades()->attach($dataForm);
+        $empresa->cidades()->sync($dataForm);
+        //$empresa->cidades()->detach();
+
+        $cidades = $empresa->cidades;
+        foreach ($cidades as $c){
+            echo " {$c->name} ";
+        }
+
     }
 }
