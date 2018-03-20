@@ -27,3 +27,5 @@ $this->get('has-many-through' ,'OneToManyController@HasManyThrought');
 $this->get('many-to-many', 'ManyToManyController@ManyToMany');
 //Relacionamento MANY TO MANY -  Muitos para Muitos Inverso.
 $this->get('many-to-many-inverso', 'ManyToManyController@ManyToManyInverso');
+//Relacionamento MANY TO MANY -  Muitos para Muitos Inserindo dados.
+$this->get('many-to-many-inserir', 'ManyToManyController@ManyToManyInserir');
