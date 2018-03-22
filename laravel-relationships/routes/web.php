@@ -29,3 +29,6 @@ $this->get('many-to-many', 'ManyToManyController@ManyToMany');
 $this->get('many-to-many-inverso', 'ManyToManyController@ManyToManyInverso');
 //Relacionamento MANY TO MANY -  Muitos para Muitos Inserindo dados.
 $this->get('many-to-many-inserir', 'ManyToManyController@ManyToManyInserir');
+
+//Relacionamento Polymorphic
+$this->get('poliformico', 'PoliformicoController@poliformico');
