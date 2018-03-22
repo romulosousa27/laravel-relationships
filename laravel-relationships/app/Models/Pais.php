@@ -19,4 +19,8 @@ class Pais extends Model
     public function cidades(){
         return $this->hasManyThrough(Cidade::class, Estado::class);
     }
+
+    public function comentarios(){
+        return $this->morphMany(Comentario::class, 'comentable');
+    }
 }

@@ -32,3 +32,4 @@ $this->get('many-to-many-inserir', 'ManyToManyController@ManyToManyInserir');
 
 //Relacionamento Polymorphic
 $this->get('poliformico', 'PoliformicoController@poliformico');
+$this->get('poliformico-inserir', 'PoliformicoController@poliformicoInserir');

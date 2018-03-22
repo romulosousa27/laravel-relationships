@@ -15,4 +15,8 @@ class Estado extends Model
     public function Cidades(){
         return $this->hasMany(Cidade::class);
     }
+
+    public function comentarios(){
+        return $this->morphMany(Comentario::class, 'comentable');
+    }
 }
