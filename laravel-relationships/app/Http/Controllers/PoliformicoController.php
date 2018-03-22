@@ -11,7 +11,13 @@ use App\Models\Comentario;
 class PoliformicoController extends Controller
 {
     public function poliformico(){
+        $cidade = Cidade::where('name', 'Fortaleza')->get()->first();
+        echo "<b>{$cidade->name}</b><br>";
 
+        $comentarios = $cidade->comentarios()->get();
+        foreach ($comentarios as $c){
+            echo "{$c->descricao} <br>";
+        }
     }
 
     public function poliformicoInserir(){
@@ -40,7 +46,7 @@ class PoliformicoController extends Controller
         echo $pais->name;
 
         $comentario = $pais->comentarios()->create([
-            'descricao' => "Novo comentario Estado {$pais->name}" . date('Ydm')
+            'descricao' => "Novo comentario Estado {$pais->name}" . date('Ydmhms')
         ]);
         var_dump($comentario);
     }
